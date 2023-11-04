@@ -1,0 +1,30 @@
+table {
+  border-collapse: collapse;
+  max-width: 1200px; /* Define um tamanho máximo para a tabela (ajuste conforme necessário) */
+  width: 100%; /* Garante que a tabela não ultrapasse a largura máxima */
+  border: 1px solid #000;
+  opacity: 0.7;
+  margin: 0 auto; /* Centraliza a tabela horizontalmente na página */
+}
+
+/* Estilo para as células de cabeçalho */
+table th {
+  border: 1px solid #000;
+  text-align: center;
+  padding: 8px;
+  font-size: 14px;
+}
+
+/* Estilo para as células de dados */
+table td {
+  border: 1px solid #000;
+  text-align: center;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.reference-container {
+  position: absolute;
+  top: 50px;
+  left: 360px; /* Adicione margem à direita para espaçamento */
+}

@@ -1,0 +1,9 @@
+<form method="post" action="">
+  {% csrf_token %}
+  
+  {{ form.product_descricao_input.label_tag }}
+  {{ form.product_preco_input.label_tag }}
+  <span>{{ form.product_nome_input.label_tag }}</span>
+  <span>{{form}}</span>
+  <button type="submit">Incluir</button>
+</form>

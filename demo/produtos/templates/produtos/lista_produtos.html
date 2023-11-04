@@ -1,0 +1,62 @@
+<!-- produtos/templates/produtos/lista_produtos.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'produtos/produto_style.css' %}">
+</head>
+
+<body>
+  {% if produtos %}
+  <!-- Adicione uma div para envolver a "Referência" e ajuste a classe CSS -->
+  <div class="reference-container">
+    <p>Referência: <span><strong>{{ request.POST.product_search_input }}</strong></span></p>
+  </div>
+    <p>Resultados</p>
+  </br>
+  </br>
+  </br>
+  </br>
+  <div>
+    <table class="table">
+      <thead class="table-header">
+        
+        <tr>
+          <th>CÓDIGO IKO</th>
+          <th>PESO</th>
+          <th>DIMENSÕES (mm)</th>
+          <th>CAP.CARGA DINÂMICA (N)</th>
+          <th>CAP.CARGA ESTÁTICA (N)</th>
+          <th>ANEL INTERNO UTILIZÁVEL</th>
+        </tr>
+      </thead>
+      <tbody class="table-body">
+        {% for produto in produtos %}
+        <tr>
+          <td>{{ produto.name }}</td>
+          <td>{{ produto.weight }}</td>
+          <td>{{ produto.dimensions_fw }}x{{ produto.dimensions_d }}x{{ produto.dimensions_c }}</td>
+          <td>{{ produto.basic_dyn_load_rat }}</td>
+          <td>{{ produto.basic_static_load_rat }}</td>
+          <td>{{ produto.usable_inn_rng }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p>Nenhum produto encontrado.</p>
+  </div>
+  {% endif %}
+
+  <a href="{% url 'pesquisa' %}" class="btn btn-primary">Voltar à Pesquisa</a>
+</body>
+
+</html>
+
+<!-- user_one
+__senha12345 -->
+
+<!-- user_two
+__senha123456 -->

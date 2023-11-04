@@ -1,0 +1,8 @@
+<form method="post" action="{% url 'lista_produtos' %}">
+  {% csrf_token %}
+  <div>
+    <span>Digite aqui a referência</span>
+  </div>
+  <input type="text" name="product_search_input" placeholder="Digitar">
+  <button type="submit">Pesquisar</button>
+</form>
