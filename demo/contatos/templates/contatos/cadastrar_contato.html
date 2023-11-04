@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <form method="post" class="centered-form"  action="{% url 'cadastrar_contato' %}">
+    <form method="post" class="centered-form"  action="{% url 'add_contatos' %}">
         <img src="{% static 'contatos/header-image.jpeg' %}" alt="Imagem do Cabeçalho" >
         {% csrf_token %}
         {{ form.contato_nome_input }}
