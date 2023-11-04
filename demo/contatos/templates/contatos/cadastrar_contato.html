@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head style="align-content: center;">
+    <link rel="stylesheet" type="text/css" href="{% static 'contatos/contatos_style.css' %}">
+</head>
+
+<body>
+    <form method="post" class="centered-form"  action="{% url 'cadastrar_contato' %}">
+        <img src="{% static 'contatos/header-image.jpeg' %}" alt="Imagem do Cabeçalho" >
+        {% csrf_token %}
+        {{ form.contato_nome_input }}
+        {{ form.contato_email_input }}
+        {{ form.contato_telefone_input }}
+        {{ form.contato_empresa_input }}
+        <button type="submit" class="btn btn-primary" >Enviar</button>
+    </form>
+</body>
+
+</html>
